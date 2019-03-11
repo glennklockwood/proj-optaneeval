@@ -1,0 +1,35 @@
+Running IOR - 10436
+IOR-3.2.0: MPI Coordinated Test of Parallel I/O
+Began               : Fri Mar  8 17:24:16 2019
+Command line        : /home/glock/src/git/ior/src/ior -t 4096 -b 4096 -s 8192 -v -B -a POSIX -w -k -o /mnt/nvme0n1/tmp10436 -z
+Machine             : Linux ngfdv160.nersc.gov
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Fri Mar  8 17:24:16 2019
+Path                : /mnt/nvme0n1
+FS                  : 698.3 GiB   Used FS: 99.9%   Inodes: 1.6 Mi   Used Inodes: 0.1%
+Participating tasks: 16
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /mnt/nvme0n1/tmp10436
+access              : single-shared-file
+type                : independent
+segments            : 8192
+ordering in a file  : random
+ordering inter file : no tasks offsets
+tasks               : 16
+clients per node    : 16
+repetitions         : 1
+xfersize            : 4096 bytes
+blocksize           : 4096 bytes
+aggregate filesize  : 512 MiB
+
+Results: 
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+Commencing write performance test: Fri Mar  8 17:24:16 2019
+ior ERROR: write() failed, errno 28, No space left on device (aiori-POSIX.c:451)
+application called MPI_Abort(MPI_COMM_WORLD, -1) - process 9

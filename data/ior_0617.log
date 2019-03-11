@@ -1,0 +1,40 @@
+Running IOR - 27386
+IOR-3.2.0: MPI Coordinated Test of Parallel I/O
+Began               : Fri Mar  8 15:39:37 2019
+Command line        : /home/glock/src/git/ior/src/ior -t 4096 -b 4096 -s 8192 -v -B -a POSIX -w -k -o /mnt/nvme0n1/tmp27386 -z
+Machine             : Linux ngfdv160.nersc.gov
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Fri Mar  8 15:39:37 2019
+Path                : /mnt/nvme0n1
+FS                  : 698.3 GiB   Used FS: 43.8%   Inodes: 698.6 Mi   Used Inodes: 0.0%
+Participating tasks: 16
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /mnt/nvme0n1/tmp27386
+access              : single-shared-file
+type                : independent
+segments            : 8192
+ordering in a file  : random
+ordering inter file : no tasks offsets
+tasks               : 16
+clients per node    : 16
+repetitions         : 1
+xfersize            : 4096 bytes
+blocksize           : 4096 bytes
+aggregate filesize  : 512 MiB
+
+Results: 
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+Commencing write performance test: Fri Mar  8 15:39:37 2019
+write     65.71      4.00       4.00       0.000093   7.79       0.177186   7.79       0   
+Max Write: 65.71 MiB/sec (68.91 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write          65.71      65.71      65.71       0.00   16822.85   16822.85   16822.85       0.00    7.79131     0     16  16    1   0     0        1         0    0   8192     4096     4096     512.0 POSIX      0
+Finished            : Fri Mar  8 15:39:45 2019
